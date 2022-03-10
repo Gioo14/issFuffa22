@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\issLab2022\.metadata\.plugins\org.eclipse.jdt.core
+2229363486.index
+2328269416.index
+1289341549.index
