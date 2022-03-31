@@ -14,5 +14,25 @@
 			<type>2</type>
 			<location>C:/issLab2022/unibolibs</location>
 		</link>
+		<link>
+			<name>.link2</name>
+			<type>2</type>
+			<location>C:/issLab2022/it.unibo.radarSystem22Mirko/unresolved dependency -  2p301</location>
+		</link>
+		<link>
+			<name>.link3</name>
+			<type>2</type>
+			<location>C:/issLab2022/it.unibo.radarSystem22Mirko/unresolved dependency -  uniboInterfaces</location>
+		</link>
+		<link>
+			<name>.link4</name>
+			<type>2</type>
+			<location>C:/issLab2022/it.unibo.radarSystem22Mirko/unresolved dependency -  unibonoawtsupports</location>
+		</link>
+		<link>
+			<name>.link5</name>
+			<type>2</type>
+			<location>C:/issLab2022/it.unibo.radarSystem22Mirko/unresolved dependency -  radarPojo</location>
+		</link>
 	</linkedResources>
 </projectDescription>

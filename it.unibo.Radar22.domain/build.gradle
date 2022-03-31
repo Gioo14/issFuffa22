@@ -44,7 +44,7 @@ eclipse {
     }
 }
 
-mainClassName = 'it.unibo.xxx'  //TODO
+mainClassName = 'it.unibo.radarSystem22-0.1.xxx'  //TODO
 
 jar {
     from sourceSets.main.allSource
