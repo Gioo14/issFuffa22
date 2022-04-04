@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0217)file:///C:/Users/Giorgia/Documents/UNIVERSITA'/INGEGNERIA%20INFORMATICA%20-%20MAGISTRALE/Anno%201/IngegneriaSistemiSoftware/issLab2022/issLab2022/it.unibo.issLabStart/userDocs/Dispense/html/_static/templateToFill.html -->
+<html><!--
+<link rel="stylesheet" type="text/css" href="../css/issStyle1.css">
+<script type="text/javascript" src="../css/issStyle.js"></script>
+--><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style type="text/css">
+body
+{
+    margin-left:  30px;
+    margin-right: 30px;
+};
+
+
+P
+{
+    font-family: Tahoma;
+    font-size: 10pt;
+};
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #545454;
+    background-color: transparent;
+	font-size: 93%;
+}
+
+a:hover {
+    background-color: #cccccc;
+}
+
+
+hr {
+    clear: both;
+    height: 1px;
+    color: #242424;
+    background-color: transparent;
+}
+
+h1, h2, h3 {
+    color: #242424;
+    clear: left;
+    font: 100% Tahoma, Helvetica, Arial, sans-serif;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+top {
+	width: 100%;
+}
+
+
+#i {
+    color: #ff1010;
+}
+tt{
+	font-family: "Arial";
+    font-size: 90%;
+	color: #006600;
+}
+em{
+	font-family: "Arial";
+    font-size: 80%;
+	font-weight: bold;
+	border-style:solid;
+	border-color: #abe876;
+    color: #1632cc;
+}
+bc{
+	font-family: "Arial";
+	font-size: 90%;
+	font-weight: bold;
+    color: #990000;
+	background-color: #fcf8c7;
+}
+ks{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #0000CD	;
+	font-size: 90%;
+}
+kc{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #008000	;
+	font-size: 90%;
+}
+pre{
+	font-family: "Consolas";
+	font-size: 85%;
+	background-color: #f5f5f5;
+	border: 1.5px solid silver;
+	padding: 5px;
+}
+m{
+	font-family: "Helvetica";
+	line-height: 100%;
+ 	font-size: 75%;
+}
+div.body{
+	 
+    font-size: 18px;
+}
+k{
+    color: #990000;
+	font-weight: bold;
+	font-size: 90%;
+}
+h1 {
+    font-size: 150%;
+    background-color: #b2c0ff;
+	padding: 10px;
+}
+
+h2 {
+    background-color: #9ed8ff;
+    font-size: 130%;
+}
+
+h3 {
+	background-color: #e6ccff;
+    font-size: 100%;
+}
+h4 {
+    background-color: #ccffcc;
+    font-size: 100%;
+	width: 95%;
+	border-radius: 5px;
+	padding: 2px;
+}
+h5 {
+    background-color: #d5ffb0;
+    font-size: 100%;
+
+}
+div.req{
+	background-color: #d9ffb3;
+    font-size: 18px;
+	width: 700px;
+    border: 3px solid green;
+    padding: 15px;
+    margin: 10px;
+}
+div.remark{
+	background-color: #E3F2FD;
+    border: 1.5px solid #d5f2ed;
+    padding: 15px;
+    margin: 10px;
+	border-radius: 25px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+ol, ul, li {
+  margin: 0;
+  margin-left: 10px;
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+img {
+	border: 1.5px solid #d5f2ed
+
+}
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #545454;
+    background-color: transparent;
+}
+
+div.wrapdesc{
+	width: 90%;
+	margin: auto;
+}
+
+div.imagedesc{
+	width: 85%;
+	margin: auto;
+}
+</style>
+    
+
+   
+<title>TemplateSonarObservable</title></head>
+    
+<body>
+<div id="top">
+<h1>LABORATORIO DI INGEGNERIA DEI SISTEMI SOFTWARE <font size="5"></font> </h1>
+</div>  
+
+<div class="body"> 
+<h2>Introduction</h2>
+ 
+ 
+<h2>Requirements</h2>
+ 
+<div class="remark">
+    1. Si desidera realizzare una versione osservabile (SonarObservable) del dispositivo Sonar introdotto in Il Sonar che soddisfi i seguenti requisiti. <BR>
+    2. Il SonarObservable deve inviare informazioni a tutti componenti software interessati alla rilevazione dei valori di distanza. <BR>
+    3. Il SonarObservable deve fornire valori di distanza solo quando questi si modificano in modo significativo. <BR>
+    4. I componenti interessati ai valori di distanza prodotti dal SonarObservable sono denominati Observer e pssono risiedere sullo stesso nodo del SonarObservable (cioe' sul RaspberryPi) o su un nodo remoto (ad esempio sul PC).<BR>
+    5. Il funzionamento del SonarObservable deve essere testato in modo automatizzato ponendo un ostacolo a distanza fissa DTESTING1 davanti ad esso, controllando che tutti gli Observers ricevano il valore DTESTING1. Dopo un qualche tempo, si modifica la posizione dell'ostacolo a una nuova distanza DTESTING2 e si controlla che gli tutti gli Observers ricevano il valore DTESTING2.<BR>
+</div>
+
+ 
+<h2>Requirement analysis</h2>
+ 
+<div class="remark">
+    1. Con versione osservabile del Sonar intendiamo un dispositivo Sonar che sia in grado di restituire la distanza da lui misurata tra se stesso e un oggetto data e che sia in grado di mostrarla in qualche modo a coloro che intendono visualizzarla.La transizione ad un Sonar osservabile prospettata in Il pattern observer puo' essere affrontata pensando il SonarObservable in due modi:<BR>
+    2. Il SonarObservable deve essere in grado di fornire i dati a tutti i componenti software interessati, cio' significa che tali componenti dovranno inviare al SonarObservable una richiesta di invio dati che questo ricevera' e alla quale rispondera' con l'invio dei suddetti dati.<BR>
+    3. Il SonarObservable deve inviare i dati misuirati ai componenti interessati alla ricezione di questi solamente quando variano in modo significativo. Ma la variazione significativa di una distanza e' opinabile e dipende dal compito del componente software che la riceve percio' sara' necessario far si' che siano i componenti software interessati a definire tale dato e a comunicarlo al SonarObservable in modo tale da ricevere i dati coerentemente con le loro necessita'. <BR>
+    4. Indipendentemente dalla loro allocazione, gli Observers devono essere in grado di comunicare con il SonarObservable, percio' questo dpvra' poter essere in grado di ricevere richieste ed inviare dati sia in modo locale che non. <BR>
+    5. Indipendentemente dal tipo di Observer, il SonarObservable dovra' essere in grado di eseguire positivamente i test automatizzati, in primo luogo deve essere in grado di fornire il dato misurato agli Observers (sia locali che non) e questi devono poter visualizzare correttamente il dato. Modificando la distanza di un valore scelto e noto, tutti gli Observer dovranno ricevere i visualizzare correttamente il nuovo valore.<BR>
+</div>
+
+<h2>Problem analysis</h2>
+<div class="remark">
+
+    La transizione ad un Sonar osservabile prospettata in "Il pattern observer" puo' essere affrontata pensando il SonarObservable in due modi:<BR>
+    1. Il SonarObservable e' visto come una classe che si interfaccia al Sonar e legge i dati misurati da quest'ultimo. Gli observers si "registrano" al SonarObservable (direttamente o tramite configuratore) e tramite un metodo UPDATE() il SonarObservable gli invia i dati richiesti secodno le distanze significative da loro desiderate.<BR>
+    2. Il SonarObservasble e il Sonar (inteso come classe) sono la stessa cosa. In questo caso sono gli Observers che, tramite funzione READ() leggono e recuperano i dati derivanti dal sonar (la porta di input dell'osservatore si sincronizza con la porta di output del sonar).   <BR>
+    <BR>
+    Cosa abbiamo a disposizione:<BR>
+     - Sensore HC-SR04 <BR>
+     - SonarAlone.c <BR>
+     - Progetto radarSystem22.domain (in particolari ISonar e IDistance)
+    <BR>
+    Problema: <BR>
+     - Come gli Observers vogliono visualizzare i dati -> Display, Console, PC, ...,? Come formalizzare questo approccio nel caso del SonarObservable?<BR>
+     - Con quale tipo di protocollo comunicano gli Observer esterni con il SonarObservable?<BR>
+     - Con quale tipo di comunicazione SonarObservable e Observers comunicano tra loro? Direttamente o in modo mediato?<BR>
+     - Cosa vuol dire "Osservabile" -> per un Observer osservare un dato significa ricevere il dato.<BR>
+</div>
+
+<h2>Test plans</h2> 
+<div class="remark">
+    L'obiettivo dei test e' verificare che l'osservatore riceva e visualizzi correttamente i dati che gli invia il SonarObservable. Analogalmente il SonarObservable deve leggere correttamente i dati prodotti dal Sonar.<BR>
+    Test 1:<BR>
+    Verifica che il dato prodotto dal sonar venga letto correttamente dal sonarObeservable<BR>
+    Il progetto viene eseguito e il sonarObeservable entra in funzione. Si pone un oggetto ad un adistanza M dal sonar. Il sonar produce un dato che verra' mandato al nostro sonarObeservable. Il test e' positivo se il dato ricevuto dal sonarObeservable e' uguale al dato inviato dal nostro sonar.<BR> 
+    Test 2:<BR>
+    Verifica che il sonarObservable legga correttamente il dato del Sonar e che lo mandi correttamente ad un singolo osservatore. In particolare, il dato ricevuto dall'osservatore dova' ugualiarsi con il dato prodotto dal sonar.<BR>
+    Il progetto viene eseguito ed entra in funzione il sonarObeservable. Ad esso si registra un osservatore. Mettiamo un oggetto a distanza M dal sonar.Il sonar produce un dato che viene mandato al sonarObeservable che lo memorizza. A questo punto l'osservatore, tramite il metodo UPDATE, riceve la distanza che il sonar ha mandato. Il test e' positivo SE il dato mandato al SonarObservable e' uguale a quello che noi vediamo altrimenti il Test e' fallito.<BR>
+    Test 3:<BR>
+    Verifica che il sonarObservable legga correttamente il dato del Sonar e riesca a fare l'update della distanza qualora essa sia cambiata sensibilmente. In particolare, il nuovo dato ricevuto dall'osservatore dovra' ugualiarsi con il nuovo dato prodotto dal sonar.<BR>
+    Ammettendo che il test uno sia riuscito, abbiamo un oggetto posizionato a distanza M e l'osservatore e il sonarObeservable hanno questa distanza memorizzata. Spostiamo sensibilmente l'oggetto a distanza N. Il Sonar manda il nuovo dato al sonarObservable e confronta il nuovo dato con quello vecchio per capire se la distanza e' cambiata sensibilmente. Il test e' positivo SE  il sonarObeservable cambia il dato che ha memorizzato con il dato appena ricevuto.<BR>
+</div>
+
+
+<h2>Project</h2> 
+<div class="remark">
+    DEFINIZIONE DEL TIPO DI PROGETTO
+</div>
+ 
+
+<h2>Testing</h2> 
+<div class="remark">
+    DEFINIZIONE DEL PIANO DI TESTING
+</div>
+
+<h2>Deployment</h2> 
+<div class="remark">
+    SVILUPPO DEL PROGETTO
+</div>
+
+ 
+<h2>Maintenance</h2> 
+<div class="remark">
+    MANTENIMENTO DEL PROGETTO
+</div>
+ 
+<!-- USEFUL
+<table style="width:100%" border="1">
+<tr>
+<td style="width:50%">
+</td>
+<td></td>
+</tr>
+</table>
+-->
+	      	
+<br><br> 	
+  
+
+<div style="background-color:rgba(86, 56, 253, 0.9); width:60%;text-align:left;color:white">
+By studentName email: giorgia.temperini@studio.unibo.it  
+<img src="C:\Users\Giorgia\Documents\UNIVERSITA'\img.jpg" alt="mbot" width="15%" height="15%">
+</div> 
+
+</body></html>
